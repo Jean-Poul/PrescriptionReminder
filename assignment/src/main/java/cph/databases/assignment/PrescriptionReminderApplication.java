@@ -22,7 +22,7 @@ public class PrescriptionReminderApplication {
     }
 	@EventListener(ApplicationReadyEvent.class)
     public void sendMail() {
-        senderService.sendEmail("cph-jl360@cphbusiness.dk",
+        senderService.sendEmail("debug000333@gmail.com",
                 "TO JP",
                 "This is the very first email sent from spring boot application");
     }
