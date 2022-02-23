@@ -37,10 +37,23 @@ public class Person {
     @JoinColumn(name = "role_id")
     private Role role;
 
-
+    // Constructors
     public Person() {
     }
 
+    public Person(Integer person_id, Integer cpr, String gender, String firstName, String lastName, String address, Integer phone, String email, Role role) {
+        this.person_id = person_id;
+        this.cpr = cpr;
+        this.gender = gender;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.role = role;
+    }
+
+    // Getters and setters
     public Integer getPerson_id() {
         return person_id;
     }
