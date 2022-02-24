@@ -16,53 +16,32 @@ public class Person implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int person_id;
-
     private int cpr;
-
+    @NotNull
     private String gender;
-
+    @NotNull
     private String firstName;
-
+    @NotNull
     private String lastName;
-
-    private String address;
-
-    private Integer phone;
-
-    private String email;
-
-
-    @ManyToMany
-    @JoinColumn(name = "role_id")
-    private Role role;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "contact_id", referencedColumnName = "id")
+    private ContactInformation ci;
 
     // Constructors
     public Person() {
     }
 
-    public Person(int person_id, int cpr, String gender, String firstName, String lastName, String address, Integer phone, String email, Role role) {
-        this.person_id = person_id;
+    public Person(int cpr, String gender, String firstName, String lastName, ContactInformation ci) {
         this.cpr = cpr;
         this.gender = gender;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
-        this.phone = phone;
-        this.email = email;
-        this.role = role;
+        this.ci = ci;
     }
 
-    // Getters and setters
-    public Integer getPerson_id() {
-        return person_id;
-    }
-
-    public void setPerson_id(int person_id) {
-        this.person_id = person_id;
-    }
-
+    // Getters and Setters
     public int getCpr() {
         return cpr;
     }
@@ -95,35 +74,11 @@ public class Person implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getAddress() {
-        return address;
+    public ContactInformation getCi() {
+        return ci;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public Integer getPhone() {
-        return phone;
-    }
-
-    public void setPhone(Integer phone) {
-        this.phone = phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
+    public void setCi(ContactInformation ci) {
+        this.ci = ci;
     }
 }

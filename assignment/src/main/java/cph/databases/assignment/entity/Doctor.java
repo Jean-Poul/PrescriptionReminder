@@ -3,7 +3,7 @@ package cph.databases.assignment.entity;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-
+/*
 @Table(name = "doctor")
 @Entity
 public class Doctor {
@@ -42,3 +42,4 @@ public class Doctor {
         this.person = person;
     }
 }
+*/
