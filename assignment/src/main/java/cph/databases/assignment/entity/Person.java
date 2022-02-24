@@ -3,37 +3,38 @@ package cph.databases.assignment.entity;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
 
-@Table(name = "person")
 @Entity
-public class Person {
+@Table(name = "person")
+public class Person implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "person_id", nullable = false)
-    private Integer person_id;
-    @NotNull
-    @Column(name = "cpr")
-    private Integer cpr;
-    @NotNull
-    @Column(name = "gender")
+    private int person_id;
+
+    private int cpr;
+
     private String gender;
-    @NotNull
-    @Column(name = "firstname")
+
     private String firstName;
-    @NotNull
-    @Column(name = "lastname")
+
     private String lastName;
-    @NotNull
-    @Column(name = "address")
+
     private String address;
-    @NotNull
-    @Column(name = "phone")
+
     private Integer phone;
-    @NotNull
-    @Column(name = "email")
+
     private String email;
-    @NotNull
-    @OneToMany
+
+
+    @ManyToMany
     @JoinColumn(name = "role_id")
     private Role role;
 
@@ -41,7 +42,7 @@ public class Person {
     public Person() {
     }
 
-    public Person(Integer person_id, Integer cpr, String gender, String firstName, String lastName, String address, Integer phone, String email, Role role) {
+    public Person(int person_id, int cpr, String gender, String firstName, String lastName, String address, Integer phone, String email, Role role) {
         this.person_id = person_id;
         this.cpr = cpr;
         this.gender = gender;
@@ -58,15 +59,15 @@ public class Person {
         return person_id;
     }
 
-    public void setPerson_id(Integer person_id) {
+    public void setPerson_id(int person_id) {
         this.person_id = person_id;
     }
 
-    public Integer getCpr() {
+    public int getCpr() {
         return cpr;
     }
 
-    public void setCpr(Integer cpr) {
+    public void setCpr(int cpr) {
         this.cpr = cpr;
     }
 
