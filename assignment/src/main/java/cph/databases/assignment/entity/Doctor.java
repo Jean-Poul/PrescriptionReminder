@@ -3,7 +3,7 @@ package cph.databases.assignment.entity;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-/*
+
 @Table(name = "doctor")
 @Entity
 public class Doctor {
@@ -11,14 +11,17 @@ public class Doctor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
-    @NotNull
+
+    public Doctor() {
+    }
+}
+ /*
+  @NotNull
     @OneToMany
     @JoinColumn(name = "person_id")
     private Person person;
 
-    // Constructors
-    public Doctor() {
-    }
+
 
     public Doctor(Integer id, Person person) {
         this.id = id;

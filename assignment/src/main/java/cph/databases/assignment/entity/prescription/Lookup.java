@@ -1,17 +1,17 @@
-package cph.databases.assignment.entity;
+package cph.databases.assignment.entity.prescription;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Pharmacist {
-
+public class Lookup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Integer id;
+    private Long id;
+    //private
 
-    public Pharmacist() {
+    public Lookup() {
     }
 }
