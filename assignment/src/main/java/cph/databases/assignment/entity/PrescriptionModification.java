@@ -5,54 +5,47 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.util.Date;
 
-
 @Entity
-@Table(name = "handout")
-public class Handout {
+@Table(name = "p_modification")
+public class PrescriptionModification {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
     @ManyToOne
     @JoinColumn(name = "prescription_id")
     private Prescription prescription;
+
+    private String type;
+
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    private Doctor doctor;
     @ManyToOne
     @JoinColumn(name = "pharmacist_id")
     private Pharmacist pharmacist;
-    @ManyToOne
-    @JoinColumn(name = "pharmacy_id")
-    private Pharmacy pharmacy;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "date")
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private final Date date = new Date();
 
-    public Handout() {
+    public PrescriptionModification() {
     }
 
-    protected Handout(Pharmacist pharmacist, Pharmacy pharmacy, Prescription prescription) {
-        this.pharmacist = pharmacist;
-        this.pharmacy = pharmacy;
+    public PrescriptionModification(Prescription prescription, Doctor doctor, String type) {
         this.prescription = prescription;
+        this.doctor = doctor;
+        this.pharmacist = null;
+        this.type = type;
     }
 
-    public Long getId() {
-        return id;
+    public PrescriptionModification(Prescription prescription, Pharmacist pharmacist, String type) {
+        this.prescription = prescription;
+        this.doctor = null;
+        this.pharmacist = pharmacist;
+        this.type = type;
     }
 
-    public Prescription getPrescription() {
-        return prescription;
-    }
-
-    public Pharmacist getPharmacist() {
-        return pharmacist;
-    }
-
-    public Pharmacy getPharmacy() {
-        return pharmacy;
-    }
-
-    public Date getDate() {
-        return date;
-    }
 }
