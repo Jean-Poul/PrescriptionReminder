@@ -1,15 +1,21 @@
 package cph.databases.assignment.entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
+@Entity
+@Table(name = "patient")
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Integer id;
+    private Long id;
+    @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY)
+    private Collection<Lookup> lookupList = new ArrayList<>();
+    @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER)
+    private Collection<Prescription> prescriptionList = new ArrayList<>();
+
 
     public Patient() {
     }

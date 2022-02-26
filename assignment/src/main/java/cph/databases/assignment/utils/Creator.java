@@ -1,17 +1,10 @@
 package cph.databases.assignment.utils;
 
-import cph.databases.assignment.entity.prescription.Dose;
-import cph.databases.assignment.entity.prescription.Drug;
-import cph.databases.assignment.repository.DoseRepo;
-import cph.databases.assignment.repository.DrugRepo;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 
 @Service
 public class Creator {
+/*
     private static DoseRepo doseRepo;
     private static DrugRepo drugRepo;
 
@@ -55,11 +48,13 @@ public class Creator {
                 dose.setForm(form);
                 dose.setUnit(unit);
                 dose.setStrength(one_tenth_strength * 5);
-                drug.addDose(dose);
+                dose.setDrug(drug);
                 doseRepo.save(dose);
                 System.out.println(counter);
                 counter++;
             }
         }
     }
+
+ */
 }

@@ -1,4 +1,4 @@
-package cph.databases.assignment.entity.prescription;
+package cph.databases.assignment.entity;
 
 
 import javax.persistence.*;
@@ -26,13 +26,6 @@ public class Drug {
 
     public Collection<Dose> getDoseList() {
         return doseList;
-    }
-
-    public void addDose(Dose dose) {
-        this.doseList.add(dose);
-        if (dose.getDrug() == null) {
-            dose.setDrug(this);
-        }
     }
 
     public int getId() {

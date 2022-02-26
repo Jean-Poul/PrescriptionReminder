@@ -1,4 +1,4 @@
-package cph.databases.assignment.entity.prescription;
+package cph.databases.assignment.entity;
 
 import javax.persistence.*;
 
@@ -17,15 +17,9 @@ public class Dose {
 
     public Dose() {
     }
+
     public Drug getDrug() {
         return drug;
-    }
-
-    public void setDrug(Drug drug) {
-        this.drug = drug;
-        if(!drug.getDoseList().contains(this)){
-            drug.addDose(this);
-        }
     }
 
     public int getId() {
@@ -36,23 +30,30 @@ public class Dose {
         return form;
     }
 
-    public void setForm(String form) {
-        this.form = form;
-    }
-
     public String getUnit() {
         return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
     }
 
     public int getStrength() {
         return strength;
     }
 
+    /*
     public void setStrength(int strength) {
         this.strength = strength;
     }
+
+    public void setForm(String form) {
+        this.form = form;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public void setDrug(Drug drug) {
+       this.drug = drug;
+    }
+
+     */
 }

@@ -23,7 +23,7 @@ public class PrescriptionReminderApplication {
         System.out.println("E-mail sending deactivated :D ");
 
         Creator cr = new Creator();
-        cr.createDoser();
+       // cr.createDoser();
 
     }
 	//@EventListener(ApplicationReadyEvent.class)
