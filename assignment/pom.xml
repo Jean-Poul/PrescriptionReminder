@@ -8,8 +8,11 @@
 		<version>2.6.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	<!-- groupId: name of company, group or organization -->
 	<groupId>cph.databases</groupId>
+	<!-- artifactId: name of this project -->
 	<artifactId>assignment</artifactId>
+	<!-- version: release version -->
 	<version>0.0.1-SNAPSHOT</version>
 	<name>prescription-reminder</name>
 	<description>mail sending service </description>
