@@ -1,6 +1,7 @@
 package cph.databases.assignment;
 
 import cph.databases.assignment.email.EmailSenderService;
+import cph.databases.assignment.utils.Creator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -19,10 +20,15 @@ public class PrescriptionReminderApplication {
     private EmailSenderService senderService;
     public static void main(String[] args) {
         SpringApplication.run(PrescriptionReminderApplication.class, args);
+        System.out.println("E-mail sending deactivated :D ");
+
+        Creator cr = new Creator();
+       // cr.createDoser();
+
     }
-	@EventListener(ApplicationReadyEvent.class)
+	//@EventListener(ApplicationReadyEvent.class)
     public void sendMail() {
-        senderService.sendEmail("cph-jl360@cphbusiness.dk",
+        senderService.sendEmail("debug000333@gmail.com",
                 "TO JP",
                 "This is the very first email sent from spring boot application");
     }
