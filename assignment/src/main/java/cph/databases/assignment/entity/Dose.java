@@ -2,6 +2,7 @@ package cph.databases.assignment.entity;
 
 import javax.persistence.*;
 
+//readonly
 @Entity
 @Table(name = "drug_dose")
 public class Dose {
@@ -38,22 +39,4 @@ public class Dose {
         return strength;
     }
 
-    /*
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    public void setForm(String form) {
-        this.form = form;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    public void setDrug(Drug drug) {
-       this.drug = drug;
-    }
-
-     */
 }

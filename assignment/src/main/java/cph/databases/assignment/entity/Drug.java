@@ -5,6 +5,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
 
+//readonly
 @Table(name = "drug")
 @Entity
 public class Drug {

@@ -48,4 +48,36 @@ public class PrescriptionModification {
         this.type = type;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public Prescription getPrescription() {
+        return prescription;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public Pharmacist getPharmacist() {
+        return this.pharmacist;
+    }
+
+    protected void setPharmacist(Pharmacist pharmacist) {
+        this.pharmacist = pharmacist;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    protected void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
 }

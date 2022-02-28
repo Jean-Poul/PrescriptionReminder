@@ -55,4 +55,8 @@ public class Handout {
     public Date getDate() {
         return date;
     }
+
+    protected void setPharmacist(Pharmacist pharmacist) {
+        this.pharmacist = pharmacist;
+    }
 }

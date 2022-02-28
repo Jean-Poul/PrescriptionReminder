@@ -16,16 +16,19 @@ public class Pharmacy {
     @OneToMany(mappedBy = "pharmacy", fetch = FetchType.EAGER)
     private Collection<Handout> handoutList = new ArrayList<>();
     @NotNull
-    private String addresse;
+    private String address;
     @NotNull
     private int phone;
+    @OneToMany(mappedBy = "pharmacy", fetch = FetchType.EAGER)
+    private Collection<Pharmacist> employees = new ArrayList<>();
+
 
     // Constructors
     public Pharmacy() {
     }
 
-    public Pharmacy(String addresse, int phone) {
-        this.addresse = addresse;
+    public Pharmacy(String address, int phone) {
+        this.address = address;
         this.phone = phone;
     }
 
@@ -34,31 +37,19 @@ public class Pharmacy {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Collection<Handout> getHandoutList() {
         return handoutList;
     }
 
-    public void setHandoutList(Collection<Handout> handoutList) {
-        this.handoutList = handoutList;
-    }
-
-    public String getAddresse() {
-        return addresse;
-    }
-
-    public void setAddresse(String addresse) {
-        this.addresse = addresse;
+    public String getAddress() {
+        return address;
     }
 
     public int getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
-        this.phone = phone;
+    public Collection<Pharmacist> getEmployees() {
+        return employees;
     }
 }

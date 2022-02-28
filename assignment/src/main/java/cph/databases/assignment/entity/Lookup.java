@@ -59,4 +59,20 @@ public class Lookup {
     public Long getId() {
         return id;
     }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    protected void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
+    public Pharmacist getPharmacist() {
+        return pharmacist;
+    }
+
+    protected void setPharmacist(Pharmacist pharmacist) {
+        this.pharmacist = pharmacist;
+    }
 }

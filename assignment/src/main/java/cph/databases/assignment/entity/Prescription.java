@@ -18,7 +18,7 @@ public class Prescription {
     @ManyToOne
     @JoinColumn(name = "patient_id")
     private Patient patient;
-    @ManyToOne //one directional - dose should not know on whitch prescription is
+    @ManyToOne //one directional - should not know on which prescription it is
     @JoinColumn(name = "dose_id")
     private Dose dose;
     @ManyToOne
@@ -47,6 +47,7 @@ public class Prescription {
 
     public Prescription() {
     }
+
 
     public Prescription(Patient patient, Dose dose, Doctor doctor, int remainingHandouts, Date treatmentStart, Date treatmentEnd, Date validUntil, String dosage, boolean substitutionAllowed) {
         this.patient = patient;
@@ -116,5 +117,13 @@ public class Prescription {
 
     public Collection<Handout> getHandoutList() {
         return handoutList;
+    }
+
+    protected void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 }
