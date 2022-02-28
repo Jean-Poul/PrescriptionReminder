@@ -22,7 +22,7 @@ public class Patient {
     private Collection<Lookup> lookupList = new ArrayList<>();
     @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER)
     private Collection<Prescription> prescriptionList = new ArrayList<>();
-    @NotNull
+    /*@NotNull
     private int remaining_handouts;
     @NotNull
     private String pickup_pharmacy;
@@ -37,7 +37,7 @@ public class Patient {
     @NotNull
     private Boolean isSubstitution;
     @NotNull
-    private String dosage_type;
+    private String dosage_type;*/
 
     // Date formatter
     private String formattingDate (LocalDateTime myDateObj) {
@@ -47,17 +47,6 @@ public class Patient {
 
     // Constructors
     public Patient() {
-    }
-
-    public Patient(int remaining_handouts, String pickup_pharmacy, String treatment_start, String treatment_end, String expiration_date, String dosage, Boolean isSubstitution, String dosage_type) {
-        this.remaining_handouts = remaining_handouts;
-        this.pickup_pharmacy = pickup_pharmacy;
-        this.treatment_start = treatment_start;
-        this.treatment_end = treatment_end;
-        this.expiration_date = expiration_date;
-        this.dosage = dosage;
-        this.isSubstitution = isSubstitution;
-        this.dosage_type = dosage_type;
     }
 
     // Getters and setters
@@ -88,7 +77,7 @@ public class Patient {
     public void setPrescriptionList(Collection<Prescription> prescriptionList) {
         this.prescriptionList = prescriptionList;
     }
-
+/*
     public int getRemaining_handouts() {
         return remaining_handouts;
     }
@@ -151,5 +140,5 @@ public class Patient {
 
     public void setDosage_type(String dosage_type) {
         this.dosage_type = dosage_type;
-    }
+    }*/
 }
