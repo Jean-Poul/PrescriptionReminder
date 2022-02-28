@@ -20,34 +20,3 @@ public class Doctor {
     public Doctor() {
     }
 }
- /*
-  @NotNull
-    @OneToMany
-    @JoinColumn(name = "person_id")
-    private Person person;
-
-
-
-    public Doctor(Integer id, Person person) {
-        this.id = id;
-        this.person = person;
-    }
-
-    // Getters and setters
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
-}
-*/

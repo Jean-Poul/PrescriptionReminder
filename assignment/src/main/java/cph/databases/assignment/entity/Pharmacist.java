@@ -16,6 +16,7 @@ public class Pharmacist {
     private Collection<Lookup> lookupList = new ArrayList<>();
     @OneToMany(mappedBy = "pharmacist", fetch = FetchType.EAGER)
     private Collection<Handout> handoutList = new ArrayList<>();
+    private final String role = "pharmacist";
 
 
     public Pharmacist() {

@@ -18,7 +18,7 @@ public class Prescription {
     @ManyToOne
     @JoinColumn(name = "patient_id")
     private Patient patient;
-    @ManyToOne //one directional - dose should not know on witch prescription is
+    @ManyToOne //one directional - dose should not know on whitch prescription is
     @JoinColumn(name = "dose_id")
     private Dose dose;
     @ManyToOne
